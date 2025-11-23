@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --fg: #0b1f3a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  color: var(--fg);
+  background: var(--bg);
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 3px solid theme('colors.accent.500');
+  outline-offset: 2px;
+}
+
+/* Typography helpers */
+.heading-clip {
+  background: linear-gradient(135deg, theme('colors.brand.700'), theme('colors.brand.500'));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.section {
+  @apply py-20 md:py-28;
+}
+
+.container-responsive {
+  @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-8;
+}
+
+.card {
+  @apply bg-white/80 backdrop-blur border border-slate-200 rounded-2xl shadow-subtle transition-transform ease-out hover:-translate-y-1 hover:shadow-xl;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
